@@ -17,8 +17,8 @@ function App() {
         <Card/>
       </section>
       <section>
-        <h1></h1>
-        <Hookscard/>
+        {/* <h1>MasterClass Hook:</h1>
+        <Hookscard/> */}
       </section>
     </>
   )

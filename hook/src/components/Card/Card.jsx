@@ -1,21 +1,23 @@
-import { useFetch } from "../UseFetch/UseFetch";
-
-
-
-
+import { UseFetch } from "../UseFetch/UseFetch";
 
 
 
 export const Card = () => {
 
-    const data = useFetch('https://jsonplaceholder.typicode.com/todos/')
+  const [data] = UseFetch("https://jsonplaceholder.typicode.com/todos")
     
     console.log(data);
 
-
     return (
       <>
-        {data &&
+        {data && data.map((item, index) => {
+                return (
+                    <p key={index}>{item.title}</p>
+                )
+            })}
+
+
+        {/* {data &&
           data.map((item) => {
             return (
               <div key={item.id}>
@@ -37,7 +39,7 @@ export const Card = () => {
                 </p>
               </div>
             )
-          })}
+          })} */}
       </>
     )
 }
